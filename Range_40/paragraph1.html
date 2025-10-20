@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paragraphs</title>
+</head>
+<body>
+    <!-- for each and every para there is a line gap-->
+     <!-- we can ise as many as required-->
+    <h3>Paras</h3>
+    <p>The error in your query is that you're updating the email addresses and then trying to select the same email addresses that contain the old domain (@oldmail.com). However, since you've already updated those email addresses to the new domain (@newmail.com), the select statement won't return any rows that contain the old domain.
+    </p>
+    <p>To fix this, you should select all customers along with their updated email addresses. Here's the corrected query:
+    </p>
+    <p>UPDATE Customer 
+        SET EMAIL = CUSTOMERNAME || '@newmail.com' 
+        WHERE EMAIL LIKE '%oldmail.com';
+        
+        SELECT CUSTOMERNAME, EMAIL 
+        FROM Customer;
+        </p>
+</body>
+</html>
